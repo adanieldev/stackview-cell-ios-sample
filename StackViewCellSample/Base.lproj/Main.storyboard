@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mYz-jn-vJF">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StackViewCellSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Answer Details Table View Controller-->
+        <scene sceneID="woZ-oZ-2X4">
+            <objects>
+                <tableViewController id="mYz-jn-vJF" customClass="AnswerDetailsTableViewController" customModule="StackViewCellSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jh4-zH-ERP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="answerCell" rowHeight="115" id="gCV-lZ-oyV" customClass="AnswersTableViewCell" customModule="StackViewCellSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="115"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCV-lZ-oyV" id="Zgc-QV-Mhe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8A-hZ-Jh0">
+                                            <rect key="frame" x="40" y="19" width="334" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="maE-7C-8NQ">
+                                            <rect key="frame" x="40" y="48" width="344" height="48"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="v8A-hZ-Jh0" firstAttribute="leading" secondItem="Zgc-QV-Mhe" secondAttribute="leadingMargin" constant="20" id="3U5-NT-XEG"/>
+                                        <constraint firstItem="v8A-hZ-Jh0" firstAttribute="top" secondItem="Zgc-QV-Mhe" secondAttribute="topMargin" constant="8" id="9hZ-0a-wCf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="v8A-hZ-Jh0" secondAttribute="trailing" constant="20" id="9ko-dD-n2e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="maE-7C-8NQ" secondAttribute="trailing" constant="10" id="LqJ-Ce-ve3"/>
+                                        <constraint firstItem="maE-7C-8NQ" firstAttribute="leading" secondItem="Zgc-QV-Mhe" secondAttribute="leadingMargin" constant="20" id="SyZ-k4-amp"/>
+                                        <constraint firstItem="maE-7C-8NQ" firstAttribute="top" secondItem="v8A-hZ-Jh0" secondAttribute="bottom" constant="8" id="uB3-zc-0t4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="maE-7C-8NQ" secondAttribute="bottom" constant="8" id="zkd-bm-RZb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answersStackView" destination="maE-7C-8NQ" id="Wrz-Qo-iBg"/>
+                                    <outlet property="questionTitleLabel" destination="v8A-hZ-Jh0" id="s62-Aw-f1s"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mYz-jn-vJF" id="VB8-Ax-pol"/>
+                            <outlet property="delegate" destination="mYz-jn-vJF" id="hdQ-sP-1r2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dx0-7J-ii8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="-63"/>
+        </scene>
+    </scenes>
+</document>
